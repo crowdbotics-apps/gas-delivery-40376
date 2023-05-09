@@ -140,11 +140,19 @@ const styles = StyleSheet.create({
     lineHeight: 14,
     fontSize: 14,
     borderRadius: 0
+  },
+  NWzpOUQW: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default Signup;
 
 const Button = props => {
+  const navigation = useNavigation();
   return <TouchableHighlight onPress={props.onPress} underlayColor='#DDDDDD'>
       <View style={[btnStyles.button, {
       backgroundColor: props.backgroundColor ? props.backgroundColor : "#000000",
@@ -155,7 +163,9 @@ const Button = props => {
         <Text style={[btnStyles.text, {
         color: props.color ? props.color : "#ffffff"
       }]}>{props.children}</Text>
-      </View>
+      <Pressable onPress={() => {
+        navigation.navigate("Privacy Policy");
+      }}><Text style={styles.NWzpOUQW}>{"Privacy policy"}</Text></Pressable></View>
     </TouchableHighlight>;
 };
 
