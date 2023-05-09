@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from "react";
 import { Text, View, TouchableOpacity, Image, TouchableHighlight, TextInput, StyleSheet } from "react-native";
 
 const Login2 = () => {
+  const navigation = useNavigation();
   const [selected, setSelected] = useState(false);
 
   const onPress = () => {
@@ -26,7 +29,9 @@ const Login2 = () => {
             <CheckBox onPress={onPress} selected={selected} text="Remember me" />
           </View>
           <TouchableOpacity>
-            <Text>Forgot Password?</Text>
+            <Pressable onPress={() => {
+            navigation.navigate("forgotPassword");
+          }}><Text>Forgot Password?</Text></Pressable>
           </TouchableOpacity>
         </View>
         <View style={styles.loginContainer}>

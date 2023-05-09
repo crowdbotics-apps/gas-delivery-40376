@@ -1,4 +1,5 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { Text, StyleSheet, Dimensions, View, TouchableOpacity } from "react-native";
 const deviceWidth = Dimensions.get("window").width;
 
@@ -6,7 +7,8 @@ const pressed = () => {
   console.log("pressed");
 };
 
-const LoginScreen = params => {
+const LoginScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.topSection}>
         <Text style={styles.headingTxt}>Sign In</Text>
@@ -20,7 +22,9 @@ const LoginScreen = params => {
         <Button title={"SignUp"}></Button>
         <Button title={"Login"} btnStyle={styles.loginBtnStyle} textStyle={styles.loginBtnText} onPress={pressed}></Button>
       </View>
-    </View>;
+    <Pressable onPress={() => {
+      navigation.navigate("forgotPassword");
+    }}><Text style={styles.yySWylqn}>{"forgot password"}</Text></Pressable></View>;
 };
 
 const styles = StyleSheet.create({
@@ -65,6 +69,13 @@ const styles = StyleSheet.create({
   },
   loginBtnText: {
     color: "black"
+  },
+  yySWylqn: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 
