@@ -29,7 +29,9 @@ const PaymentScreen = () => {
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.payButton} onPress={handlePayment}>
-        <Text style={styles.payButtonText}>Pay $50.00</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("profile");
+      }}><Text style={styles.payButtonText}>Pay $50.00</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
