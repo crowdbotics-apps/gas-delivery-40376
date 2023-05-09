@@ -1,4 +1,5 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { Text, View, TouchableOpacity, Image, StyleSheet, TextInput, TouchableHighlight } from "react-native";
 
 const pressed = () => {
@@ -6,6 +7,7 @@ const pressed = () => {
 };
 
 const Signup = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.heading}>
         <Text style={styles.headingText}>Sign up</Text>
@@ -50,7 +52,9 @@ const Signup = () => {
           <Text>Login</Text>
         </TouchableOpacity>
       </View>
-    </View>;
+    <Pressable onPress={() => {
+      navigation.navigate("Terms and Conditions");
+    }}><Text style={styles.queBWGOv}>{"Terms and conditions"}</Text></Pressable></View>;
 };
 
 const styles = StyleSheet.create({
@@ -78,12 +82,6 @@ const styles = StyleSheet.create({
   },
   mb20: {
     marginBottom: 20
-  },
-  forgotPassword: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 40
   },
   loginContainer: {
     width: "80%",
@@ -135,6 +133,13 @@ const styles = StyleSheet.create({
   },
   footerText: {
     color: "#6B6B6B"
+  },
+  queBWGOv: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default Signup;
