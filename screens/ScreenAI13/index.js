@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const SubscriptionScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Choose Your Plan</Text>
@@ -24,7 +26,9 @@ const SubscriptionScreen = () => {
           <Image source={require('../assets/gold.png')} style={styles.tierImage} />
           <Text style={styles.tierTitle}>Gold</Text>
           <Text style={styles.tierPrice}>$29.99/month</Text>
-          <Text style={styles.tierDescription}>Access to all features</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI15");
+        }}><Text style={styles.tierDescription}>Access to all features</Text></Pressable>
         </TouchableOpacity>
       </View>
     </View>;
