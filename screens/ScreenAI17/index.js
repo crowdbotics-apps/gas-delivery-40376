@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <Image source={require('../assets/notification-icon.png')} style={styles.notificationIcon} />
@@ -15,14 +17,18 @@ const HomeScreen = () => {
         /* Dummy data for upcoming orders */
       }
         <View style={styles.order}>
-          <Text style={styles.orderTitle}>Order #1234</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI20");
+        }}><Text style={styles.orderTitle}>Order #1234</Text></Pressable>
           <Text style={styles.orderDate}>Delivery Date: 12/05/2021</Text>
         </View>
         <View style={styles.order}>
           <Text style={styles.orderTitle}>Order #5678</Text>
           <Text style={styles.orderDate}>Delivery Date: 15/05/2021</Text>
         </View>
-      </View>
+      <Pressable onPress={() => {
+        navigation.navigate("ScreenAI21");
+      }}><Text style={styles.LzbvnHWV}>{"Notification icon"}</Text></Pressable></View>
       <View style={styles.bottomMenu}>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/account-icon.png')} style={styles.bottomMenuIcon} />
@@ -110,6 +116,13 @@ const styles = StyleSheet.create({
   },
   bottomMenuText: {
     fontSize: 12
+  },
+  LzbvnHWV: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default HomeScreen;

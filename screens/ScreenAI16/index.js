@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <Image source={require('../assets/notification-icon.png')} style={styles.notificationIcon} />
@@ -22,7 +24,9 @@ const HomeScreen = () => {
             <Text style={styles.orderDate}>Delivery Date: 01/02/2022</Text>
           </View>
         </View>
-      </View>
+      <Pressable onPress={() => {
+        navigation.navigate("ScreenAI21");
+      }}><Text style={styles.GsRFMjRk}>{"Notification icon"}</Text></Pressable></View>
       <View style={styles.bottomMenu}>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/map-icon.png')} style={styles.bottomMenuIcon} />
@@ -109,6 +113,13 @@ const styles = StyleSheet.create({
   bottomMenuText: {
     fontSize: 12,
     color: '#A9A9A9'
+  },
+  GsRFMjRk: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default HomeScreen;
