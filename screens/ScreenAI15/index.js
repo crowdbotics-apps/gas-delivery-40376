@@ -1,38 +1,50 @@
-import { useNavigation } from "@react-navigation/native";
-import { Pressable } from "react-native";
-import { useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const PaymentScreen = () => {
-  const navigation = useNavigation();
-  const [selectedCard, setSelectedCard] = useState(null);
-
-  const handleCardSelection = card => {
-    setSelectedCard(card);
-  };
-
-  const handlePayment = () => {// handle payment logic
-  };
-
+const HomeScreen = () => {
   return <View style={styles.container}>
-      <Text style={styles.title}>Select a Credit Card</Text>
-      <View style={styles.cardContainer}>
-        <TouchableOpacity style={[styles.card, selectedCard === 'card1' && styles.selectedCard]} onPress={() => handleCardSelection('card1')}>
-          <Image source={require('../assets/card1.png')} style={styles.cardImage} />
-          <Pressable onPress={() => {
-          navigation.navigate("ScreenAI14");
-        }}><Text style={styles.cardNumber}>**** **** **** 1234</Text></Pressable>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.card, selectedCard === 'card2' && styles.selectedCard]} onPress={() => handleCardSelection('card2')}>
-          <Image source={require('../assets/card2.png')} style={styles.cardImage} />
-          <Text style={styles.cardNumber}>**** **** **** 5678</Text>
+      <View style={styles.header}>
+        <Image source={require('../assets/notification-icon.png')} style={styles.notificationIcon} />
+        <Text style={styles.headerText}>Upcoming Orders</Text>
+        <TouchableOpacity style={styles.scheduleButton}>
+          <Text style={styles.scheduleButtonText}>Schedule Order</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.payButton} onPress={handlePayment}>
-        <Pressable onPress={() => {
-        navigation.navigate("profile");
-      }}><Text style={styles.payButtonText}>Pay $50.00</Text></Pressable>
-      </TouchableOpacity>
+      <View style={styles.ordersContainer}>
+        {
+        /* Dummy data for upcoming orders */
+      }
+        <View style={styles.order}>
+          <Text style={styles.orderTitle}>Order #1234</Text>
+          <Text style={styles.orderDate}>Delivery Date: 12/05/2021</Text>
+        </View>
+        <View style={styles.order}>
+          <Text style={styles.orderTitle}>Order #5678</Text>
+          <Text style={styles.orderDate}>Delivery Date: 15/05/2021</Text>
+        </View>
+        <View style={styles.order}>
+          <Text style={styles.orderTitle}>Order #9012</Text>
+          <Text style={styles.orderDate}>Delivery Date: 18/05/2021</Text>
+        </View>
+      </View>
+      <View style={styles.bottomMenu}>
+        <TouchableOpacity style={styles.bottomMenuItem}>
+          <Image source={require('../assets/account-icon.png')} style={styles.bottomMenuIcon} />
+          <Text style={styles.bottomMenuText}>Account</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.bottomMenuItem}>
+          <Image source={require('../assets/schedule-icon.png')} style={styles.bottomMenuIcon} />
+          <Text style={styles.bottomMenuText}>Schedule</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.bottomMenuItem}>
+          <Image source={require('../assets/messages-icon.png')} style={styles.bottomMenuIcon} />
+          <Text style={styles.bottomMenuText}>Messages</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.bottomMenuItem}>
+          <Image source={require('../assets/settings-icon.png')} style={styles.bottomMenuIcon} />
+          <Text style={styles.bottomMenuText}>Settings</Text>
+        </TouchableOpacity>
+      </View>
     </View>;
 };
 
@@ -40,51 +52,67 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
+    paddingTop: 50
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20
-  },
-  cardContainer: {
+  header: {
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 20
   },
-  card: {
-    backgroundColor: '#f2f2f2',
-    borderRadius: 10,
+  notificationIcon: {
+    width: 25,
+    height: 25
+  },
+  headerText: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  scheduleButton: {
+    backgroundColor: '#FF6347',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 20
+  },
+  scheduleButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  ordersContainer: {
+    flex: 1
+  },
+  order: {
+    backgroundColor: '#F5F5F5',
     padding: 20,
-    width: '48%',
-    alignItems: 'center'
-  },
-  selectedCard: {
-    borderWidth: 2,
-    borderColor: '#007aff'
-  },
-  cardImage: {
-    width: 50,
-    height: 50,
+    borderRadius: 10,
     marginBottom: 10
   },
-  cardNumber: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    letterSpacing: 2
-  },
-  payButton: {
-    backgroundColor: '#007aff',
-    borderRadius: 10,
-    paddingVertical: 15,
-    paddingHorizontal: 30
-  },
-  payButtonText: {
-    color: '#fff',
+  orderTitle: {
     fontSize: 18,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: 10
+  },
+  orderDate: {
+    fontSize: 16
+  },
+  bottomMenu: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingBottom: 20
+  },
+  bottomMenuItem: {
+    alignItems: 'center'
+  },
+  bottomMenuIcon: {
+    width: 25,
+    height: 25,
+    marginBottom: 5
+  },
+  bottomMenuText: {
+    fontSize: 12
   }
 });
-export default PaymentScreen;
+export default HomeScreen;

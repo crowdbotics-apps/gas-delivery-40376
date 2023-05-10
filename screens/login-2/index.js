@@ -150,6 +150,7 @@ const styles = StyleSheet.create({
 export default Login2;
 
 const Button = props => {
+  const navigation = useNavigation();
   return <TouchableHighlight onPress={props.onPress} underlayColor="#DDDDDD">
       <View style={[btnStyles.button, {
       backgroundColor: props.backgroundColor ? props.backgroundColor : "#000000",
@@ -157,11 +158,13 @@ const Button = props => {
       borderWidth: props.borderWidth ? props.borderWidth : 0,
       borderColor: props.borderColor ? props.borderColor : "#000000"
     }]}>
-        <Text style={[btnStyles.text, {
-        color: props.color ? props.color : "#ffffff"
-      }]}>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI15");
+      }}><Text style={[btnStyles.text, {
+          color: props.color ? props.color : "#ffffff"
+        }]}>
           {props.children}
-        </Text>
+        </Text></Pressable>
       </View>
     </TouchableHighlight>;
 };
