@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 const conversations = [{
@@ -26,7 +27,7 @@ const MessagesScreen = () => {
   }) => <View style={styles.itemContainer}>
       <Image source={item.image} style={styles.profileImage} />
       <View style={styles.itemDetails}>
-        <Text style={styles.name}>{item.name}</Text>
+        <Pressable><Text style={styles.name}>{item.name}</Text></Pressable>
         <Text style={styles.message}>{item.message}</Text>
       </View>
       <Text style={styles.time}>{item.time}</Text>
