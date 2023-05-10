@@ -30,11 +30,15 @@ const HomeScreen = () => {
       <View style={styles.bottomMenu}>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/map-icon.png')} style={styles.bottomMenuIcon} />
-          <Text style={styles.bottomMenuText}>Map</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI26");
+        }}><Text style={styles.bottomMenuText}>Map</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/history-icon.png')} style={styles.bottomMenuIcon} />
-          <Text style={styles.bottomMenuText}>Order History</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI29");
+        }}><Text style={styles.bottomMenuText}>Order History</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/message-icon.png')} style={styles.bottomMenuIcon} />
