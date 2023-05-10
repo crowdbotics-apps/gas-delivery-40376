@@ -32,7 +32,9 @@ const HomeScreen = () => {
       <View style={styles.bottomMenu}>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/account-icon.png')} style={styles.bottomMenuIcon} />
-          <Text style={styles.bottomMenuText}>Account</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI22");
+        }}><Text style={styles.bottomMenuText}>Account</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/schedule-icon.png')} style={styles.bottomMenuIcon} />
