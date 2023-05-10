@@ -38,11 +38,15 @@ const HomeScreen = () => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/schedule-icon.png')} style={styles.bottomMenuIcon} />
-          <Text style={styles.bottomMenuText}>Schedule</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI20");
+        }}><Text style={styles.bottomMenuText}>Schedule</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/messages-icon.png')} style={styles.bottomMenuIcon} />
-          <Text style={styles.bottomMenuText}>Messages</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI24");
+        }}><Text style={styles.bottomMenuText}>Messages</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/settings-icon.png')} style={styles.bottomMenuIcon} />
