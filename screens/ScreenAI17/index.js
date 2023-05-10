@@ -22,10 +22,6 @@ const HomeScreen = () => {
           <Text style={styles.orderTitle}>Order #5678</Text>
           <Text style={styles.orderDate}>Delivery Date: 15/05/2021</Text>
         </View>
-        <View style={styles.order}>
-          <Text style={styles.orderTitle}>Order #9012</Text>
-          <Text style={styles.orderDate}>Delivery Date: 18/05/2021</Text>
-        </View>
       </View>
       <View style={styles.bottomMenu}>
         <TouchableOpacity style={styles.bottomMenuItem}>
@@ -62,8 +58,8 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   notificationIcon: {
-    width: 25,
-    height: 25
+    width: 30,
+    height: 30
   },
   headerText: {
     fontSize: 20,
@@ -77,7 +73,6 @@ const styles = StyleSheet.create({
   },
   scheduleButtonText: {
     color: '#fff',
-    fontSize: 16,
     fontWeight: 'bold'
   },
   ordersContainer: {
@@ -101,14 +96,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingBottom: 20
+    paddingVertical: 10,
+    borderTopWidth: 1,
+    borderTopColor: '#F5F5F5'
   },
   bottomMenuItem: {
     alignItems: 'center'
   },
   bottomMenuIcon: {
-    width: 25,
-    height: 25,
+    width: 30,
+    height: 30,
     marginBottom: 5
   },
   bottomMenuText: {

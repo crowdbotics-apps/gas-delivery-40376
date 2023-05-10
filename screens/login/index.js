@@ -85,8 +85,11 @@ const Button = ({
   textStyle,
   onPress
 }) => {
+  const navigation = useNavigation();
   return <TouchableOpacity style={[btnStyles.btn, btnStyle]} onPress={onPress}>
-      <Text style={[btnStyles.btnText, textStyle]}>{title}</Text>
+      <Pressable onPress={() => {
+      navigation.navigate("ScreenAI16");
+    }}><Text style={[btnStyles.btnText, textStyle]}>{title}</Text></Pressable>
     </TouchableOpacity>;
 };
 
