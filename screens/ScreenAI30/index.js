@@ -34,10 +34,14 @@ const AccountSettingsScreen = () => {
       }}><Text style={styles.buttonText}>Terms and Conditions</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Change Password</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI31");
+      }}><Text style={styles.buttonText}>Change Password</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Send Feedback</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI32");
+      }}><Text style={styles.buttonText}>Send Feedback</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Delete Account</Text>

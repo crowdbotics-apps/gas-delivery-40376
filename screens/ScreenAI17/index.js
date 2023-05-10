@@ -50,7 +50,9 @@ const HomeScreen = () => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.bottomMenuItem}>
           <Image source={require('../assets/settings-icon.png')} style={styles.bottomMenuIcon} />
-          <Text style={styles.bottomMenuText}>Settings</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI30");
+        }}><Text style={styles.bottomMenuText}>Settings</Text></Pressable>
         </TouchableOpacity>
       </View>
     </View>;
