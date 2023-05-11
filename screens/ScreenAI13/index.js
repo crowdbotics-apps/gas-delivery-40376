@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const SubscriptionScreen = () => {
   const navigation = useNavigation();
@@ -11,19 +11,19 @@ const SubscriptionScreen = () => {
       </View>
       <View style={styles.tiersContainer}>
         <TouchableOpacity style={styles.tier}>
-          <Image source={require('../assets/bronze.png')} style={styles.tierImage} />
+          
           <Text style={styles.tierTitle}>Bronze</Text>
           <Text style={styles.tierPrice}>$9.99/month</Text>
           <Text style={styles.tierDescription}>Access to basic features</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tier}>
-          <Image source={require('../assets/silver.png')} style={styles.tierImage} />
+          
           <Text style={styles.tierTitle}>Silver</Text>
           <Text style={styles.tierPrice}>$19.99/month</Text>
           <Text style={styles.tierDescription}>Access to advanced features</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tier}>
-          <Image source={require('../assets/gold.png')} style={styles.tierImage} />
+          
           <Text style={styles.tierTitle}>Gold</Text>
           <Text style={styles.tierPrice}>$29.99/month</Text>
           <Pressable onPress={() => {
@@ -64,11 +64,6 @@ const styles = StyleSheet.create({
     padding: 20,
     marginHorizontal: 10,
     alignItems: 'center'
-  },
-  tierImage: {
-    width: 80,
-    height: 80,
-    marginBottom: 20
   },
   tierTitle: {
     fontSize: 20,
